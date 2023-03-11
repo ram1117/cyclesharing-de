@@ -18,25 +18,29 @@
   padding: 1% 5%;
 }
 
+.cities-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.alphabet-btns {
+  margin: 0.2em;
+  padding: 0.5em 1em;
+}
+
 @media screen and (min-width: 768px) {
   .App {
     width: 70%;
   }
 }
 
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 1200px) {
   .App {
     width: 60%;
   }
 }
-
 @media screen and (min-width: 1200px) {
   .App {
     width: 50%;
-  }
-}
-@media screen and (min-width: 1200px) {
-  .App {
-    width: 40%;
   }
 }

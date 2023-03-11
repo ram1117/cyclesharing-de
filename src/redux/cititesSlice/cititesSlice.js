@@ -23,8 +23,10 @@ const citiesSlice = createSlice({
             company: network.company,
             latitude: network.latitude,
             longitude: network.longitude,
+            id: network.id,
           });
-          const firstLetter = network.location.city[0];
+          const { city } = network.location;
+          const firstLetter = city.charAt(0);
           if (newCapitals.indexOf(firstLetter) === -1) {
             newCapitals.push(firstLetter);
           }
@@ -33,7 +35,7 @@ const citiesSlice = createSlice({
       return {
         ...state,
         cities: [...newList],
-        newCapitals: [...newCapitals],
+        cityCapitals: [...newCapitals],
         status: 'completed',
       };
     });
