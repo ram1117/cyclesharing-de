@@ -1,10 +1,12 @@
+import { Routes, Route } from 'react-router-dom';
+import HomePage from './components/homepage/HomePage';
 import './App.css';
 
 const App = () => (
   <div className="App">
-    <header className="App-header">
-      <h1>Hello</h1>
-    </header>
+    <Routes>
+      <Route index element={<HomePage />} />
+    </Routes>
   </div>
 );
 
