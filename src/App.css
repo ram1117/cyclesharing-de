@@ -1,15 +1,42 @@
 .App {
   text-align: center;
   border: solid 1px black;
-  margin: 5% auto;
+  margin: 0 auto;
 }
 
-.logo{
+.logo {
   text-align: left;
 }
 
-@media screen and (min-width:768px) {
-  .App{
+.lang-buttons {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.lang-buttons > * {
+  border-radius: 0px;
+  padding: 1% 5%;
+}
+
+@media screen and (min-width: 768px) {
+  .App {
+    width: 70%;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .App {
     width: 60%;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .App {
+    width: 50%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .App {
+    width: 40%;
   }
 }
