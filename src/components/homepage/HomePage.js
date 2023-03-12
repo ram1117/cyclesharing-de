@@ -4,8 +4,7 @@ import { Link } from 'react-router-dom';
 import LanguageButtons from './LanguageButtons';
 
 const HomePage = () => {
-  const cities = useSelector((state) => state.cities.cities);
-  const status = useSelector((state) => state.cities.status);
+  const { cities, status } = useSelector((state) => state.cities);
   const [filterCities, setFilterCities] = useState([]);
 
   useEffect(() => {
