@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import LanguageButtons from './LanguageButtons';
 
 const HomePage = () => {
@@ -59,18 +60,20 @@ const HomePage = () => {
       {status === 'loading' && <h4>Loading...</h4>}
       <div className="cities-wrapper">
         {filterCities.map((cityObj) => (
-          <div className="city-tile" key={cityObj.id}>
-            <h3>{cityObj.city}</h3>
-            <p>
-              Provider:
-              <br />
-              <span>{cityObj.name}</span>
-            </p>
-            <input
-              value={`${cityObj.latitude} , ${cityObj.longitude}`}
-              readOnly
-            />
-          </div>
+          <Link to={`details/${cityObj.id}`} key={cityObj.id}>
+            <div id="city-tile" className="city-tile" data-href={cityObj.href}>
+              <h3>{cityObj.city}</h3>
+              <p>
+                Provider:
+                <br />
+                <span>{cityObj.name}</span>
+              </p>
+              <input
+                value={`${cityObj.latitude} , ${cityObj.longitude}`}
+                readOnly
+              />
+            </div>
+          </Link>
         ))}
       </div>
     </>
