@@ -1,11 +1,17 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import LanguageButtons from './LanguageButtons';
 
 const HomePage = () => {
   const cities = useSelector((state) => state.cities.cities);
   const status = useSelector((state) => state.cities.status);
-  const [filterCities, setFilterCities] = useState(cities);
+  const [filterCities, setFilterCities] = useState([]);
+
+  useEffect(() => {
+    if (status === 'completed') {
+      setFilterCities(cities);
+    }
+  }, [cities, status]);
 
   const list = useSelector((state) => state.cities.cityCapitals);
   const sortlist = [...list].sort();
@@ -50,15 +56,20 @@ const HomePage = () => {
           </button>
         ))}
       </div>
+      {status === 'loading' && <h4>Loading...</h4>}
       <div className="cities-wrapper">
-        {status === 'loading' && <h4>Loading...</h4>}
         {filterCities.map((cityObj) => (
           <div className="city-tile" key={cityObj.id}>
             <h3>{cityObj.city}</h3>
             <p>
-              company:
-              <span>{cityObj.company}</span>
+              Provider:
+              <br />
+              <span>{cityObj.name}</span>
             </p>
+            <input
+              value={`${cityObj.latitude} , ${cityObj.longitude}`}
+              readOnly
+            />
           </div>
         ))}
       </div>

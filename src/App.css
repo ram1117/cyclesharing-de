@@ -28,6 +28,13 @@
   padding: 0.5em 1em;
 }
 
+.city-tile{
+  text-align: left;
+  margin:0.5rem;
+  padding: 0.5rem;
+  border: solid 1px black;
+}
+
 @media screen and (min-width: 768px) {
   .App {
     width: 70%;

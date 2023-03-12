@@ -20,9 +20,9 @@ const citiesSlice = createSlice({
           newList.push({
             city: network.location.city,
             href: network.href,
-            company: network.company,
-            latitude: network.latitude,
-            longitude: network.longitude,
+            name: network.name,
+            latitude: network.location.latitude,
+            longitude: network.location.longitude,
             id: network.id,
           });
           const { city } = network.location;
