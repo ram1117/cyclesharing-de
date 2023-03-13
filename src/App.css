@@ -1,7 +1,7 @@
 .App {
   text-align: center;
   border: solid 1px black;
-  margin: 5% auto;
+  margin: 0 auto;
 }
 
 .logo {
@@ -11,5 +11,17 @@
 @media screen and (min-width: 768px) {
   .App {
     width: 60%;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .App {
+    width: 50%;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .App {
+    width: 40%;
   }
 }
