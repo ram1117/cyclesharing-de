@@ -14,7 +14,7 @@
 }
 
 .lang-buttons > * {
-  border-radius: 0px;
+  border-radius: 0;
   padding: 1% 5%;
 }
 
@@ -35,6 +35,7 @@
     width: 50%;
   }
 }
+
 @media screen and (min-width: 1200px) {
   .App {
     width: 40%;
