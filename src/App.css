@@ -41,6 +41,7 @@
 
 .city-tile {
   text-align: left;
+  margin: 0.5rem;
   padding: 0.5rem;
   border: solid 1px black;
 }
@@ -77,5 +78,11 @@
   .App {
     width: 50%;
     margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .App {
+    width: 40%;
   }
 }
