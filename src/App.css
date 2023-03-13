@@ -8,7 +8,40 @@
   text-align: left;
 }
 
+.lang-buttons {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.lang-buttons > * {
+  border-radius: 0;
+  padding: 1% 5%;
+}
+
+.cities-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.alphabet-btns {
+  margin: 0.2em;
+  padding: 0.5em 1em;
+}
+
+.city-tile {
+  text-align: left;
+  margin: 0.5rem;
+  padding: 0.5rem;
+  border: solid 1px black;
+}
+
 @media screen and (min-width: 768px) {
+  .App {
+    width: 70%;
+  }
+}
+
+@media screen and (min-width: 1200px) {
   .App {
     width: 60%;
   }
