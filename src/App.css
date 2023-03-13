@@ -4,12 +4,12 @@
   margin: 5% auto;
 }
 
-.logo{
+.logo {
   text-align: left;
 }
 
-@media screen and (min-width:768px) {
-  .App{
+@media screen and (min-width: 768px) {
+  .App {
     width: 60%;
   }
 }
