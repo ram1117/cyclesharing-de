@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { fetchDetails } from '../../redux/detailspage/detailSlice';
+import HeaderPanel from '../homepage/HeaderPanel';
 
 const DetailPage = () => {
   const { nwId } = useParams();
@@ -17,20 +18,22 @@ const DetailPage = () => {
   return (
     <>
       <header>
-        <div className="proider-details">
-          <h2>{detail.city}</h2>
-          <h4>{detail.name}</h4>
-          <h5>{detail.company}</h5>
-        </div>
+        <HeaderPanel />
       </header>
+      <div className="provider-details">
+        <h2>{detail.city}</h2>
+        <h4>{detail.name}</h4>
+        <h4>{detail.company}</h4>
+      </div>
+
       <div className="location-details">
         {detail.stations.length === 0 && <h5>No stations found...</h5>}
         {detail.stations.map((station) => (
-          <div key={station.id}>
+          <div className="station-detail" key={station.id}>
             Station:
             {station.name}
             <p>
-              free bikes:
+              Free Bikes:
               {station.free_bikes}
             </p>
             <p>
@@ -38,6 +41,7 @@ const DetailPage = () => {
               {station.empty_slots}
             </p>
             <input
+              className="coordinates"
               readOnly
               value={`${station.latitude} , ${station.longitude}`}
             />

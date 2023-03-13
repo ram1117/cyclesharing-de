@@ -1,20 +1,30 @@
 .App {
   text-align: center;
   border: solid 1px black;
-  margin: 0 auto;
+}
+
+.header-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .logo {
+  width: 80%;
   text-align: left;
+  padding: 0 5%;
 }
 
 .lang-buttons {
+  width: 20%;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
 }
 
 .lang-buttons > * {
   border-radius: 0;
+  height: 50%;
+  margin: 1%;
   padding: 1% 5%;
 }
 
@@ -30,25 +40,41 @@
 
 .city-tile {
   text-align: left;
-  margin: 0.5rem;
   padding: 0.5rem;
   border: solid 1px black;
+}
+
+.city-link {
+  text-decoration: none;
+  color: black;
+}
+
+.station-detail {
+  margin: 5% 1%;
+  padding: 0 5%;
+}
+
+.coordinates {
+  text-align: center;
 }
 
 @media screen and (min-width: 768px) {
   .App {
     width: 70%;
+    margin: 0 auto;
   }
 }
 
 @media screen and (min-width: 1200px) {
   .App {
     width: 60%;
+    margin: 0 auto;
   }
 }
 
 @media screen and (min-width: 1200px) {
   .App {
     width: 50%;
+    margin: 0 auto;
   }
 }

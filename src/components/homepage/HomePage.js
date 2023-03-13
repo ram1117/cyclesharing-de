@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import LanguageButtons from './LanguageButtons';
+import HeaderPanel from './HeaderPanel';
 
 const HomePage = () => {
   const { cities, status } = useSelector((state) => state.cities);
@@ -31,9 +31,8 @@ const HomePage = () => {
   return (
     <>
       <header>
-        <h2 className="logo">Cycle Share</h2>
+        <HeaderPanel />
       </header>
-      <LanguageButtons />
       <div className="total-stats">
         <h3>Germany</h3>
         <p>
@@ -59,7 +58,11 @@ const HomePage = () => {
       {status === 'loading' && <h4>Loading...</h4>}
       <div className="cities-wrapper">
         {filterCities.map((cityObj) => (
-          <Link to={`details/${cityObj.id}`} key={cityObj.id}>
+          <Link
+            className="city-link"
+            to={`details/${cityObj.id}`}
+            key={cityObj.id}
+          >
             <div id="city-tile" className="city-tile" data-href={cityObj.href}>
               <h3>{cityObj.city}</h3>
               <p>
@@ -67,10 +70,8 @@ const HomePage = () => {
                 <br />
                 <span>{cityObj.name}</span>
               </p>
-              <input
-                value={`${cityObj.latitude} , ${cityObj.longitude}`}
-                readOnly
-              />
+              <p>{cityObj.latitude}</p>
+              <p>{cityObj.longitude}</p>
             </div>
           </Link>
         ))}
