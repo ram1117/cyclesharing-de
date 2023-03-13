@@ -1,17 +1,21 @@
 import { useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { fetchData } from '../../redux/homepage/cititesSlice';
 import HeaderPanel from './HeaderPanel';
 
 const HomePage = () => {
   const { cities, status } = useSelector((state) => state.cities);
   const [filterCities, setFilterCities] = useState([]);
-
+  const dispatch = useDispatch();
   useEffect(() => {
+    if (status === 'loading') {
+      dispatch(fetchData());
+    }
     if (status === 'completed') {
       setFilterCities(cities);
     }
-  }, [cities, status]);
+  }, [cities, status, dispatch]);
 
   const list = useSelector((state) => state.cities.cityCapitals);
   const sortlist = [...list].sort();
