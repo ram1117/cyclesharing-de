@@ -21,22 +21,24 @@ const DetailPage = () => {
       <header>
         <HeaderPanel />
       </header>
-      <div className="provider-details">
+      <div className="provider-details beige">
         <h2>{detail.city}</h2>
-        <h4>{detail.name}</h4>
-        <h4>{detail.company}</h4>
+        <h3>{detail.name}</h3>
+        <h3>{detail.company}</h3>
       </div>
 
-      <div className="location-details">
-        {detail.stations.length === 0 && <h5>{lang.nostation}</h5>}
+      <div className="location-details beige">
+        {detail.stations.length === 0 && <h2>{lang.nostation}</h2>}
         {detail.stations.map((station) => (
           <div
-            className="station-detail"
+            className="station-detail beige"
             key={station.id}
             data-testid="stations"
           >
-            {lang.station}
-            {station.name}
+            <h3>
+              {lang.station}
+              {station.name}
+            </h3>
             <p>
               {lang.freebikes}
               <span className="free-qty">{` ${station.free_bikes}`}</span>

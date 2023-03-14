@@ -1,7 +1,7 @@
 .App {
   text-align: center;
   font-family: 'Gill Sans', sans-serif;
-  background: rgba(77, 140, 87, 0.3);
+  background: rgba(77, 140, 87, 0.7);
   color: beige;
 }
 
@@ -47,7 +47,7 @@
   margin: 1% 0;
   padding: 5%;
   text-align: left;
-  background: url('../src/assets/map.png') 90% 40% / 30% no-repeat;
+  background: url('../src/assets/germanymap.png') 95% 40% / 20% no-repeat;
 }
 
 .total-stats > h2,
@@ -98,8 +98,7 @@
 
 .cities-wrapper > a:nth-child(4n-2),
 .cities-wrapper > a:nth-child(4n-1) {
-  background:
-    url('../src/assets/cycle1.png') rgba(1, 50, 32, 0.4) 90% 10% / 40%
+  background: url('../src/assets/cycle1.png') rgba(1, 50, 32, 0.4) 90% 10% / 40%
     no-repeat;
 }
 
@@ -116,13 +115,53 @@
   font-weight: 700;
 }
 
+.provider-details {
+  padding: 5%;
+  text-align: left;
+  background: url('../src/assets/cycle3.png') 90% 40% / 20% no-repeat;
+}
+.provider-details > * {
+  margin: 1%;
+  font-weight: 700;
+}
+
+.provider-details > h2{
+  font-size: 1.6rem;
+}
+
+.provider-details > h2{
+  font-size: 1.3rem;
+}
+
 .station-detail {
-  margin: 5% 1%;
-  padding: 0 5%;
+  margin: 5%;
+  padding: 5%;
+  border: solid 2px rgba(1, 50, 32, 0.9);
+  background: rgba(1, 50, 32, 0.4);
+  font-weight: 800;
+  border-radius: 20px;
+}
+.station-detail > * {
+  margin: 2%;
+}
+
+.station-detail > h3 {
+  font-size: 1.3rem;
+}
+
+.station-detail > p{
+  font-size: 1.1rem;
 }
 
 .coordinates {
+  width: 90%;
+  padding: 5% 2%;
   text-align: center;
+  border-radius: 10px;
+  border: solid 2px rgba(1, 50, 32, 0.9);
+  background: beige;
+  font-size: 0.9rem;
+  font-weight: 500;
 }
 
 @media screen and (min-width: 768px) {

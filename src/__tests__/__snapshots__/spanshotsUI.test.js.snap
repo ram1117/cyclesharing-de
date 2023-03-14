@@ -4,7 +4,7 @@ exports[`snapshot testing components testing detailpage snapshot 1`] = `
 Array [
   <header>
     <div
-      className="header-bar"
+      className="header-bar biege"
     >
       <h1
         className="logo"
@@ -12,15 +12,17 @@ Array [
         Cycle Share
       </h1>
       <div
-        className="lang-buttons"
+        className="lang-buttons-panel"
       >
         <button
+          className="lang-buttons buttons"
           onClick={[Function]}
           type="button"
         >
           EN
         </button>
         <button
+          className="lang-buttons buttons"
           onClick={[Function]}
           type="button"
         >
@@ -30,25 +32,25 @@ Array [
     </div>
   </header>,
   <div
-    className="provider-details"
+    className="provider-details beige"
   >
     <h2 />
-    <h4 />
-    <h4 />
+    <h3 />
+    <h3 />
   </div>,
   <div
-    className="location-details"
+    className="location-details beige"
   >
-    <h5>
+    <h2>
       No station data found...
-    </h5>
+    </h2>
   </div>,
 ]
 `;
 
 exports[`snapshot testing components testing headerpanel snapshot 1`] = `
 <div
-  className="header-bar"
+  className="header-bar biege"
 >
   <h1
     className="logo"
@@ -56,15 +58,17 @@ exports[`snapshot testing components testing headerpanel snapshot 1`] = `
     Cycle Share
   </h1>
   <div
-    className="lang-buttons"
+    className="lang-buttons-panel"
   >
     <button
+      className="lang-buttons buttons"
       onClick={[Function]}
       type="button"
     >
       EN
     </button>
     <button
+      className="lang-buttons buttons"
       onClick={[Function]}
       type="button"
     >
@@ -78,7 +82,7 @@ exports[`snapshot testing components testing homepage snapshot 1`] = `
 Array [
   <header>
     <div
-      className="header-bar"
+      className="header-bar biege"
     >
       <h1
         className="logo"
@@ -86,15 +90,17 @@ Array [
         Cycle Share
       </h1>
       <div
-        className="lang-buttons"
+        className="lang-buttons-panel"
       >
         <button
+          className="lang-buttons buttons"
           onClick={[Function]}
           type="button"
         >
           EN
         </button>
         <button
+          className="lang-buttons buttons"
           onClick={[Function]}
           type="button"
         >
@@ -109,23 +115,23 @@ Array [
     <h2>
       Germany
     </h2>
-    <h4>
+    <h3>
       Eco-Friendly Mobility
-    </h4>
-    <p
+    </h3>
+    <h4
       data-testid="total"
     >
       Cities:
       <span>
          0
       </span>
-    </p>
+    </h4>
   </div>,
   <div
     className="button-pane"
   >
     <button
-      className="alphabet-btns"
+      className="alphabet-btns buttons"
       onClick={[Function]}
       type="button"
     >
