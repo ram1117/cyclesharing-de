@@ -15,11 +15,13 @@ Array [
         className="lang-buttons"
       >
         <button
+          onClick={[Function]}
           type="button"
         >
           EN
         </button>
         <button
+          onClick={[Function]}
           type="button"
         >
           DE
@@ -38,7 +40,7 @@ Array [
     className="location-details"
   >
     <h5>
-      No stations found...
+      No station data found...
     </h5>
   </div>,
 ]
@@ -57,11 +59,13 @@ exports[`snapshot testing components testing headerpanel snapshot 1`] = `
     className="lang-buttons"
   >
     <button
+      onClick={[Function]}
       type="button"
     >
       EN
     </button>
     <button
+      onClick={[Function]}
       type="button"
     >
       DE
@@ -85,11 +89,13 @@ Array [
         className="lang-buttons"
       >
         <button
+          onClick={[Function]}
           type="button"
         >
           EN
         </button>
         <button
+          onClick={[Function]}
           type="button"
         >
           DE
@@ -100,9 +106,12 @@ Array [
   <div
     className="total-stats"
   >
-    <h3>
+    <h2>
       Germany
-    </h3>
+    </h2>
+    <h4>
+      Eco-Friendly Mobility
+    </h4>
     <p
       data-testid="total"
     >
@@ -124,7 +133,7 @@ Array [
     </button>
   </div>,
   <h4>
-    Loading...
+    loading...
   </h4>,
   <div
     className="cities-wrapper"

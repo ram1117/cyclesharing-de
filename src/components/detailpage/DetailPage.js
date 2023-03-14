@@ -8,6 +8,7 @@ const DetailPage = () => {
   const { nwId } = useParams();
   const detail = useSelector((state) => state.detail.detail);
   const status = useSelector((state) => state.detail.status);
+  const lang = useSelector((state) => state.language.langPack);
   const dispatch = useDispatch();
   useEffect(() => {
     if (status === 'loading') {
@@ -27,22 +28,24 @@ const DetailPage = () => {
       </div>
 
       <div className="location-details">
-        {detail.stations.length === 0 && <h5>No stations found...</h5>}
+        {detail.stations.length === 0 && <h5>{lang.nostation}</h5>}
         {detail.stations.map((station) => (
           <div
             className="station-detail"
             key={station.id}
             data-testid="stations"
           >
-            Station:
+            {lang.station}
             {station.name}
             <p>
-              Free Bikes:
-              {` ${station.free_bikes}`}
+              {lang.freebikes}
+              <span className="free-qty">{` ${station.free_bikes}`}</span>
             </p>
             <p>
-              Empty Slots:
-              {station.empty_slots === null ? ' N/A' : station.empty_slots}
+              {lang.emptyslots}
+              <span className="empty-qty">
+                {station.empty_slots === null ? ' N/A' : station.empty_slots}
+              </span>
             </p>
             <input
               className="coordinates"

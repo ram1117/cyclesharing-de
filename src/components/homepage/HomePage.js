@@ -18,6 +18,7 @@ const HomePage = () => {
   }, [cities, status, dispatch]);
 
   const list = useSelector((state) => state.cities.cityCapitals);
+  const lang = useSelector((state) => state.language.langPack);
   const sortlist = [...list].sort();
 
   const handleClick = (event) => {
@@ -38,15 +39,16 @@ const HomePage = () => {
         <HeaderPanel />
       </header>
       <div className="total-stats">
-        <h3>Germany</h3>
+        <h2>{lang.countryHeader}</h2>
+        <h4>{lang.mainSubHeader}</h4>
         <p data-testid="total">
-          Cities:
+          {lang.cities}
           <span>{` ${cities.length}`}</span>
         </p>
       </div>
       <div className="button-pane">
         <button type="button" className="alphabet-btns" onClick={handleClick}>
-          All
+          {lang.all}
         </button>
         {sortlist.map((char) => (
           <button
@@ -60,7 +62,7 @@ const HomePage = () => {
           </button>
         ))}
       </div>
-      {status === 'loading' && <h4>Loading...</h4>}
+      {status === 'loading' && <h4>{lang.loading}</h4>}
       <div className="cities-wrapper">
         {filterCities.map((cityObj) => (
           <Link
@@ -76,7 +78,7 @@ const HomePage = () => {
             >
               <h3>{cityObj.city}</h3>
               <p>
-                Provider:
+                {lang.provider}
                 <br />
                 <span>{cityObj.name}</span>
               </p>
