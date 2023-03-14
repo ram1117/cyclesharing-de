@@ -17,7 +17,7 @@ describe('testing detail page component', () => {
   it('testing for company name', async () => {
     renderWithRouter(<DetailPage />);
     await waitFor(() => {
-      expect(screen.getByText(`Transparenzportal Hamburg`).toBeInTheDocument);
+      expect(screen.getByText('Transparenzportal Hamburg').toBeInTheDocument);
     });
   });
   it('testing for no of stations displayed', async () => {
