@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-  font-family: 'Gill Sans', sans-serif;
+  font-family: 'Gill Sans', 'Gill Sans MT', sans-serif;
   background: rgba(77, 140, 87, 0.7);
   color: beige;
 }
@@ -72,7 +72,6 @@
 .cities-wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr;
   gap: 0;
 }
 
@@ -87,18 +86,21 @@
 
 .city-tile {
   text-align: left;
-  background: rgba(77, 140, 87, 0.7);
+  background: rgba(77, 140, 87, 0.7) url('../src/assets/arrow-icon.svg') no-repeat 90% 80% / 15%;
   padding: 1rem;
 }
 
 .cities-wrapper > a:nth-child(4n-3),
 .cities-wrapper > a:nth-child(4n) {
-  background: url('../src/assets/cycle2.png') 90% 10% / 30% no-repeat;
+  background:
+    url('../src/assets/cycle2.png') 90% 10% / 30% no-repeat,
+    url('../src/assets/arrow-icon.svg') no-repeat 90% 80% / 15%;
 }
 
 .cities-wrapper > a:nth-child(4n-2),
 .cities-wrapper > a:nth-child(4n-1) {
-  background: url('../src/assets/cycle1.png') rgba(1, 50, 32, 0.4) 90% 10% / 40%
+  background:
+    url('../src/assets/cycle1.png') rgba(1, 50, 32, 0.4) 90% 10% / 40%
     no-repeat;
 }
 
@@ -120,17 +122,23 @@
   text-align: left;
   background: url('../src/assets/cycle3.png') 90% 40% / 20% no-repeat;
 }
+
 .provider-details > * {
   margin: 1%;
   font-weight: 700;
 }
 
-.provider-details > h2{
+.provider-details > h2 {
   font-size: 1.6rem;
 }
 
-.provider-details > h2{
+.provider-details > h2 {
   font-size: 1.3rem;
+}
+
+.location-details {
+  display: grid;
+  grid-template-columns: 1fr;
 }
 
 .station-detail {
@@ -141,6 +149,7 @@
   font-weight: 800;
   border-radius: 20px;
 }
+
 .station-detail > * {
   margin: 2%;
 }
@@ -149,7 +158,7 @@
   font-size: 1.3rem;
 }
 
-.station-detail > p{
+.station-detail > p {
   font-size: 1.1rem;
 }
 
@@ -172,21 +181,7 @@
 }
 
 @media screen and (min-width: 1200px) {
-  .App {
-    width: 60%;
-    margin: 0 auto;
-  }
-}
-
-@media screen and (min-width: 1200px) {
-  .App {
-    width: 50%;
-    margin: 0 auto;
-  }
-}
-
-@media screen and (min-width: 1200px) {
-  .App {
-    width: 40%;
+  .location-details {
+    grid-template-columns: 1fr 1fr;
   }
 }

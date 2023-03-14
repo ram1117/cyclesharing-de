@@ -23,7 +23,7 @@ const HomePage = () => {
 
   const handleClick = (event) => {
     const char = event.target.innerText;
-    if (char === 'All') {
+    if (char === 'All' || char === 'Alle') {
       setFilterCities(cities);
     } else {
       const newArr = cities.filter(
