@@ -40,20 +40,24 @@ const HomePage = () => {
       </header>
       <div className="total-stats">
         <h2>{lang.countryHeader}</h2>
-        <h4>{lang.mainSubHeader}</h4>
-        <p data-testid="total">
+        <h3>{lang.mainSubHeader}</h3>
+        <h4 data-testid="total">
           {lang.cities}
           <span>{` ${cities.length}`}</span>
-        </p>
+        </h4>
       </div>
       <div className="button-pane">
-        <button type="button" className="alphabet-btns" onClick={handleClick}>
+        <button
+          type="button"
+          className="alphabet-btns buttons"
+          onClick={handleClick}
+        >
           {lang.all}
         </button>
         {sortlist.map((char) => (
           <button
             type="button"
-            className="alphabet-btns"
+            className="alphabet-btns buttons"
             key={char}
             onClick={handleClick}
             data-testid="alphabets"
@@ -82,8 +86,14 @@ const HomePage = () => {
                 <br />
                 <span>{cityObj.name}</span>
               </p>
-              <p>{cityObj.latitude}</p>
-              <p>{cityObj.longitude}</p>
+              <p>
+                Lat:
+                {` ${cityObj.latitude}`}
+              </p>
+              <p>
+                Long:
+                {` ${cityObj.longitude}`}
+              </p>
             </div>
           </Link>
         ))}

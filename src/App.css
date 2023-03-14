@@ -1,37 +1,83 @@
 .App {
   text-align: center;
   font-family: 'Gill Sans', sans-serif;
-  border: solid 1px black;
+  background: rgba(77, 140, 87, 0.3);
+  color: beige;
+}
+
+.beige {
+  color: beige;
 }
 
 .header-bar {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background: #013220;
 }
 
 .logo {
-  width: 80%;
+  width: 50%;
   text-align: left;
   padding: 0 5%;
 }
 
-.lang-buttons {
-  width: 20%;
+.buttons {
+  background: rgba(1, 50, 32, 0.6);
+  border: solid 2px beige;
+  color: beige;
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.lang-buttons-panel {
+  width: 30%;
   display: flex;
   justify-content: center;
 }
 
-.lang-buttons > * {
-  border-radius: 0;
-  height: 50%;
+.lang-buttons {
   margin: 1%;
-  padding: 1% 5%;
+  padding: 5% 10%;
+}
+
+.total-stats {
+  margin: 1% 0;
+  padding: 5%;
+  text-align: left;
+  background: url('../src/assets/map.png') 90% 40% / 30% no-repeat;
+}
+
+.total-stats > h2,
+.total-stats > h3,
+.total-stats > h4 {
+  font-weight: 700;
+  margin: 1%;
+}
+
+.total-stats > h2 {
+  font-size: 2rem;
+}
+
+.total-stats > h3 {
+  font-size: 1.7rem;
+}
+
+.total-stats > h4 {
+  font-size: 1.4rem;
 }
 
 .cities-wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 0;
+}
+
+.button-pane {
+  padding: 5% 2%;
 }
 
 .alphabet-btns {
@@ -41,14 +87,33 @@
 
 .city-tile {
   text-align: left;
-  margin: 0.5rem;
-  padding: 0.5rem;
-  border: solid 1px black;
+  background: rgba(77, 140, 87, 0.7);
+  padding: 1rem;
+}
+
+.cities-wrapper > a:nth-child(4n-3),
+.cities-wrapper > a:nth-child(4n) {
+  background: url('../src/assets/cycle2.png') 90% 10% / 30% no-repeat;
+}
+
+.cities-wrapper > a:nth-child(4n-2),
+.cities-wrapper > a:nth-child(4n-1) {
+  background:
+    url('../src/assets/cycle1.png') rgba(1, 50, 32, 0.4) 90% 10% / 40%
+    no-repeat;
 }
 
 .city-link {
   text-decoration: none;
-  color: black;
+  color: beige;
+}
+
+.city-tile > h3 {
+  font-size: 1.3rem;
+}
+
+.city-tile > p {
+  font-weight: 700;
 }
 
 .station-detail {

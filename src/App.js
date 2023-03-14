@@ -4,7 +4,7 @@ import DetailPage from './components/detailpage/DetailPage';
 import './App.css';
 
 const App = () => (
-  <div className="App">
+  <div className="App biege">
     <Routes>
       <Route index element={<HomePage />} />
       <Route path="/details/:nwId" element={<DetailPage />} />
