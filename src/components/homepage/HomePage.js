@@ -18,11 +18,12 @@ const HomePage = () => {
   }, [cities, status, dispatch]);
 
   const list = useSelector((state) => state.cities.cityCapitals);
+  const lang = useSelector((state) => state.language.langPack);
   const sortlist = [...list].sort();
 
   const handleClick = (event) => {
     const char = event.target.innerText;
-    if (char === 'All') {
+    if (char === 'All' || char === 'Alle') {
       setFilterCities(cities);
     } else {
       const newArr = cities.filter(
@@ -38,20 +39,25 @@ const HomePage = () => {
         <HeaderPanel />
       </header>
       <div className="total-stats">
-        <h3>Germany</h3>
-        <p data-testid="total">
-          Cities:
+        <h2>{lang.countryHeader}</h2>
+        <h3>{lang.mainSubHeader}</h3>
+        <h4 data-testid="total">
+          {lang.cities}
           <span>{` ${cities.length}`}</span>
-        </p>
+        </h4>
       </div>
       <div className="button-pane">
-        <button type="button" className="alphabet-btns" onClick={handleClick}>
-          All
+        <button
+          type="button"
+          className="alphabet-btns buttons"
+          onClick={handleClick}
+        >
+          {lang.all}
         </button>
         {sortlist.map((char) => (
           <button
             type="button"
-            className="alphabet-btns"
+            className="alphabet-btns buttons"
             key={char}
             onClick={handleClick}
             data-testid="alphabets"
@@ -60,7 +66,7 @@ const HomePage = () => {
           </button>
         ))}
       </div>
-      {status === 'loading' && <h4>Loading...</h4>}
+      {status === 'loading' && <h4>{lang.loading}</h4>}
       <div className="cities-wrapper">
         {filterCities.map((cityObj) => (
           <Link
@@ -76,12 +82,18 @@ const HomePage = () => {
             >
               <h3>{cityObj.city}</h3>
               <p>
-                Provider:
+                {lang.provider}
                 <br />
                 <span>{cityObj.name}</span>
               </p>
-              <p>{cityObj.latitude}</p>
-              <p>{cityObj.longitude}</p>
+              <p>
+                Lat:
+                {` ${cityObj.latitude}`}
+              </p>
+              <p>
+                Long:
+                {` ${cityObj.longitude}`}
+              </p>
             </div>
           </Link>
         ))}

@@ -5,13 +5,18 @@ import { Provider } from 'react-redux';
 import { MemoryRouter, Routes, Route } from 'react-router-dom';
 import citysliceReducer from '../redux/homepage/cititesSlice';
 import detailSliceReducer from '../redux/detailspage/detailSlice';
+import languageSliceReducer from '../redux/language/languageSlice';
 
 export function renderWithProviders(
   ui,
   {
     preloadedState = {},
     store = configureStore({
-      reducer: { cities: citysliceReducer, detail: detailSliceReducer },
+      reducer: {
+        cities: citysliceReducer,
+        detail: detailSliceReducer,
+        language: languageSliceReducer,
+      },
       preloadedState,
     }),
     ...renderOptions
@@ -29,7 +34,11 @@ export const renderWithRouter = (
   {
     preloadedState = {},
     store = configureStore({
-      reducer: { cities: citysliceReducer, detail: detailSliceReducer },
+      reducer: {
+        cities: citysliceReducer,
+        detail: detailSliceReducer,
+        language: languageSliceReducer,
+      },
       preloadedState,
     }),
     ...renderOptions
