@@ -1,6 +1,6 @@
 import { screen, waitFor } from '@testing-library/react';
-import { renderWithProviders } from '../test-utils/test-uitl';
 import { BrowserRouter } from 'react-router-dom';
+import { renderWithProviders } from '../test-utils/test-uitl';
 import HomePage from '../components/homepage/HomePage';
 import { server1 } from '../test-utils/mockServers';
 
@@ -13,7 +13,7 @@ describe('testing Homepage component', () => {
     const { store } = renderWithProviders(
       <BrowserRouter>
         <HomePage />
-      </BrowserRouter>
+      </BrowserRouter>,
     );
     await waitFor(() => {
       const cityList = store.getState().cities.cities;
@@ -24,7 +24,7 @@ describe('testing Homepage component', () => {
     renderWithProviders(
       <BrowserRouter>
         <HomePage />
-      </BrowserRouter>
+      </BrowserRouter>,
     );
 
     await waitFor(() => {
@@ -36,7 +36,7 @@ describe('testing Homepage component', () => {
     renderWithProviders(
       <BrowserRouter>
         <HomePage />
-      </BrowserRouter>
+      </BrowserRouter>,
     );
     await waitFor(() => {
       const cities = screen.getAllByTestId('cities');
@@ -47,7 +47,7 @@ describe('testing Homepage component', () => {
     renderWithProviders(
       <BrowserRouter>
         <HomePage />
-      </BrowserRouter>
+      </BrowserRouter>,
     );
     await waitFor(() => {
       const alphabets = screen.getAllByTestId('alphabets');
@@ -58,7 +58,7 @@ describe('testing Homepage component', () => {
     renderWithProviders(
       <BrowserRouter>
         <HomePage />
-      </BrowserRouter>
+      </BrowserRouter>,
     );
     await waitFor(() => {
       expect(screen.getByTestId('total').textContent).toBe('Cities: 3');

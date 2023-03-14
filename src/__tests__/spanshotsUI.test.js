@@ -1,8 +1,8 @@
 import renderer from 'react-test-renderer';
+import { Provider } from 'react-redux';
 import HomePage from '../components/homepage/HomePage';
 import DetailPage from '../components/detailpage/DetailPage';
 import HeaderPanel from '../components/homepage/HeaderPanel';
-import { Provider } from 'react-redux';
 import store from '../redux/store';
 
 describe('snapshot testing components', () => {
@@ -11,7 +11,7 @@ describe('snapshot testing components', () => {
       .create(
         <Provider store={store}>
           <HomePage />
-        </Provider>
+        </Provider>,
       )
       .toJSON();
     expect(tree).toMatchSnapshot();
@@ -21,7 +21,7 @@ describe('snapshot testing components', () => {
       .create(
         <Provider store={store}>
           <DetailPage />
-        </Provider>
+        </Provider>,
       )
       .toJSON();
     expect(tree).toMatchSnapshot();
@@ -31,7 +31,7 @@ describe('snapshot testing components', () => {
       .create(
         <Provider store={store}>
           <HeaderPanel />
-        </Provider>
+        </Provider>,
       )
       .toJSON();
     expect(tree).toMatchSnapshot();
