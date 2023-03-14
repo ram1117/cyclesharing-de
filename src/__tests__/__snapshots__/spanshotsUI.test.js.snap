@@ -1,0 +1,148 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`snapshot testing components testing detailpage snapshot 1`] = `
+Array [
+  <header>
+    <div
+      className="header-bar biege"
+    >
+      <h1
+        className="logo"
+      >
+        Cycle Share
+      </h1>
+      <div
+        className="lang-buttons-panel"
+      >
+        <button
+          className="lang-buttons buttons"
+          onClick={[Function]}
+          type="button"
+        >
+          EN
+        </button>
+        <button
+          className="lang-buttons buttons"
+          onClick={[Function]}
+          type="button"
+        >
+          DE
+        </button>
+      </div>
+    </div>
+  </header>,
+  <div
+    className="provider-details beige"
+  >
+    <h2 />
+    <h3 />
+    <h3 />
+  </div>,
+  <div
+    className="location-details beige"
+  >
+    <h2>
+      No station data found...
+    </h2>
+  </div>,
+]
+`;
+
+exports[`snapshot testing components testing headerpanel snapshot 1`] = `
+<div
+  className="header-bar biege"
+>
+  <h1
+    className="logo"
+  >
+    Cycle Share
+  </h1>
+  <div
+    className="lang-buttons-panel"
+  >
+    <button
+      className="lang-buttons buttons"
+      onClick={[Function]}
+      type="button"
+    >
+      EN
+    </button>
+    <button
+      className="lang-buttons buttons"
+      onClick={[Function]}
+      type="button"
+    >
+      DE
+    </button>
+  </div>
+</div>
+`;
+
+exports[`snapshot testing components testing homepage snapshot 1`] = `
+Array [
+  <header>
+    <div
+      className="header-bar biege"
+    >
+      <h1
+        className="logo"
+      >
+        Cycle Share
+      </h1>
+      <div
+        className="lang-buttons-panel"
+      >
+        <button
+          className="lang-buttons buttons"
+          onClick={[Function]}
+          type="button"
+        >
+          EN
+        </button>
+        <button
+          className="lang-buttons buttons"
+          onClick={[Function]}
+          type="button"
+        >
+          DE
+        </button>
+      </div>
+    </div>
+  </header>,
+  <div
+    className="total-stats"
+  >
+    <h2>
+      Germany
+    </h2>
+    <h3>
+      Eco-Friendly Mobility
+    </h3>
+    <h4
+      data-testid="total"
+    >
+      Cities:
+      <span>
+         0
+      </span>
+    </h4>
+  </div>,
+  <div
+    className="button-pane"
+  >
+    <button
+      className="alphabet-btns buttons"
+      onClick={[Function]}
+      type="button"
+    >
+      All
+    </button>
+  </div>,
+  <h4>
+    loading...
+  </h4>,
+  <div
+    className="cities-wrapper"
+  />,
+]
+`;
