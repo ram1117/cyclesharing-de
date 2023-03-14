@@ -1,0 +1,133 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`snapshot testing components testing detailpage snapshot 1`] = `
+Array [
+  <header>
+    <div
+      className="header-bar"
+    >
+      <h1
+        className="logo"
+      >
+        Cycle Share
+      </h1>
+      <div
+        className="lang-buttons"
+      >
+        <button
+          type="button"
+        >
+          EN
+        </button>
+        <button
+          type="button"
+        >
+          DE
+        </button>
+      </div>
+    </div>
+  </header>,
+  <div
+    className="provider-details"
+  >
+    <h2 />
+    <h4 />
+    <h4 />
+  </div>,
+  <div
+    className="location-details"
+  >
+    <h5>
+      No stations found...
+    </h5>
+  </div>,
+]
+`;
+
+exports[`snapshot testing components testing headerpanel snapshot 1`] = `
+<div
+  className="header-bar"
+>
+  <h1
+    className="logo"
+  >
+    Cycle Share
+  </h1>
+  <div
+    className="lang-buttons"
+  >
+    <button
+      type="button"
+    >
+      EN
+    </button>
+    <button
+      type="button"
+    >
+      DE
+    </button>
+  </div>
+</div>
+`;
+
+exports[`snapshot testing components testing homepage snapshot 1`] = `
+Array [
+  <header>
+    <div
+      className="header-bar"
+    >
+      <h1
+        className="logo"
+      >
+        Cycle Share
+      </h1>
+      <div
+        className="lang-buttons"
+      >
+        <button
+          type="button"
+        >
+          EN
+        </button>
+        <button
+          type="button"
+        >
+          DE
+        </button>
+      </div>
+    </div>
+  </header>,
+  <div
+    className="total-stats"
+  >
+    <h3>
+      Germany
+    </h3>
+    <p
+      data-testid="total"
+    >
+      Cities:
+      <span>
+         0
+      </span>
+    </p>
+  </div>,
+  <div
+    className="button-pane"
+  >
+    <button
+      className="alphabet-btns"
+      onClick={[Function]}
+      type="button"
+    >
+      All
+    </button>
+  </div>,
+  <h4>
+    Loading...
+  </h4>,
+  <div
+    className="cities-wrapper"
+  />,
+]
+`;

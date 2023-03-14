@@ -16,7 +16,7 @@ const detailSlice = createSlice({
   reducers: {},
   extraReducers(builder) {
     builder.addCase(fetchDetails.fulfilled, (state, { payload }) => {
-      const arr = payload.network.stations.slice(1, 16);
+      const arr = payload.network.stations.slice(0, 16);
       const dataObj = {
         name: payload.network.name,
         city: payload.network.location.city,

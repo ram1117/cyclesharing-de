@@ -1,17 +1,21 @@
 import { useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { fetchData } from '../../redux/homepage/cititesSlice';
 import HeaderPanel from './HeaderPanel';
 
 const HomePage = () => {
   const { cities, status } = useSelector((state) => state.cities);
   const [filterCities, setFilterCities] = useState([]);
-
+  const dispatch = useDispatch();
   useEffect(() => {
+    if (status === 'loading') {
+      dispatch(fetchData());
+    }
     if (status === 'completed') {
       setFilterCities(cities);
     }
-  }, [cities, status]);
+  }, [cities, status, dispatch]);
 
   const list = useSelector((state) => state.cities.cityCapitals);
   const sortlist = [...list].sort();
@@ -35,9 +39,9 @@ const HomePage = () => {
       </header>
       <div className="total-stats">
         <h3>Germany</h3>
-        <p>
+        <p data-testid="total">
           Cities:
-          <span>{cities.length}</span>
+          <span>{` ${cities.length}`}</span>
         </p>
       </div>
       <div className="button-pane">
@@ -50,6 +54,7 @@ const HomePage = () => {
             className="alphabet-btns"
             key={char}
             onClick={handleClick}
+            data-testid="alphabets"
           >
             {char}
           </button>
@@ -63,7 +68,12 @@ const HomePage = () => {
             to={`details/${cityObj.id}`}
             key={cityObj.id}
           >
-            <div id="city-tile" className="city-tile" data-href={cityObj.href}>
+            <div
+              id="city-tile"
+              className="city-tile"
+              data-href={cityObj.href}
+              data-testid="cities"
+            >
               <h3>{cityObj.city}</h3>
               <p>
                 Provider:
