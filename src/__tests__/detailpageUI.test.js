@@ -1,8 +1,7 @@
-import { screen } from '@testing-library/react';
+import { screen, waitFor } from '@testing-library/react';
 import { server2 } from '../test-utils/mockServers';
 import { renderWithRouter } from '../test-utils/test-uitl';
 import DetailPage from '../components/detailpage/DetailPage';
-import { waitFor } from '@testing-library/react';
 
 beforeAll(() => server2.listen());
 afterEach(() => server2.resetHandlers());
@@ -18,7 +17,7 @@ describe('testing detail page component', () => {
   it('testing for company name', async () => {
     renderWithRouter(<DetailPage />);
     await waitFor(() => {
-      expect(screen.getByText(`StadtRAD Hamburg'`).toBeInTheDocument);
+      expect(screen.getByText(`Transparenzportal Hamburg`).toBeInTheDocument);
     });
   });
   it('testing for no of stations displayed', async () => {
