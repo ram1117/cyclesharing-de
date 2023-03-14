@@ -39,9 +39,9 @@ const HomePage = () => {
       </header>
       <div className="total-stats">
         <h3>Germany</h3>
-        <p>
+        <p data-testid="total">
           Cities:
-          <span>{cities.length}</span>
+          <span>{` ${cities.length}`}</span>
         </p>
       </div>
       <div className="button-pane">
@@ -54,6 +54,7 @@ const HomePage = () => {
             className="alphabet-btns"
             key={char}
             onClick={handleClick}
+            data-testid="alphabets"
           >
             {char}
           </button>
@@ -67,7 +68,12 @@ const HomePage = () => {
             to={`details/${cityObj.id}`}
             key={cityObj.id}
           >
-            <div id="city-tile" className="city-tile" data-href={cityObj.href}>
+            <div
+              id="city-tile"
+              className="city-tile"
+              data-href={cityObj.href}
+              data-testid="cities"
+            >
               <h3>{cityObj.city}</h3>
               <p>
                 Provider:

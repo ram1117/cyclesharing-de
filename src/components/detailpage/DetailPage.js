@@ -29,16 +29,20 @@ const DetailPage = () => {
       <div className="location-details">
         {detail.stations.length === 0 && <h5>No stations found...</h5>}
         {detail.stations.map((station) => (
-          <div className="station-detail" key={station.id}>
+          <div
+            className="station-detail"
+            key={station.id}
+            data-testid="stations"
+          >
             Station:
             {station.name}
             <p>
               Free Bikes:
-              {station.free_bikes}
+              {` ${station.free_bikes}`}
             </p>
             <p>
               Empty Slots:
-              {station.empty_slots}
+              {station.empty_slots === null ? ' N/A' : station.empty_slots}
             </p>
             <input
               className="coordinates"

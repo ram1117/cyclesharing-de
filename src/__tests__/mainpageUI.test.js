@@ -1,47 +1,67 @@
 import { screen, waitFor } from '@testing-library/react';
-import { rest } from 'msw';
-import { setupServer } from 'msw/node';
-import renderWithProviders from '../__mocks__/test-uitl';
+import { renderWithProviders } from '../test-utils/test-uitl';
 import { BrowserRouter } from 'react-router-dom';
-import App from '../App';
+import HomePage from '../components/homepage/HomePage';
+import { server1 } from '../test-utils/mockServers';
 
-const data = {
-  networks: [
-    {
-      company: 'JCDecaux',
-      href: '/v2/networks/stadtrad-hamburg',
-      location: {
-        latitude: 53.57532,
-        city: 'Hamburg',
-        longitude: 10.01534,
-        country: 'DE',
-      },
-      name: 'Transparenzportal Hamburg',
-      id: 'stadtrad-hamburg',
-    },
-  ],
-};
+beforeAll(() => server1.listen());
+afterEach(() => server1.resetHandlers());
+afterAll(() => server1.close());
 
-const handlers = [
-  rest.get('http://api.citybik.es/v2/networks', (req, res, ctx) => {
-    return res(ctx.status(200), ctx.json(data), ctx.delay(10));
-  }),
-];
+describe('testing Homepage component', () => {
+  it('testing no of cities in the store', async () => {
+    const { store } = renderWithProviders(
+      <BrowserRouter>
+        <HomePage />
+      </BrowserRouter>
+    );
+    await waitFor(() => {
+      const cityList = store.getState().cities.cities;
+      expect(cityList.length).toBe(3);
+    });
+  });
+  it('testing if a city is in homepage', async () => {
+    renderWithProviders(
+      <BrowserRouter>
+        <HomePage />
+      </BrowserRouter>
+    );
 
-const server = setupServer(...handlers);
+    await waitFor(() => {
+      expect(screen.getByText('Hamburg').toBeInTheDocument);
+    });
+  });
 
-beforeAll(() => server.listen());
-afterEach(() => server.resetHandlers());
-afterAll(() => server.close());
-
-it('testing Homepage component', async () => {
-  const { store } = renderWithProviders(
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
-  );
-
-  // const cityList = store.getState().cities.cities;
-  // console.log(cityList.length);
-  await waitFor(() => expect(screen.getByText('Hamburg').toBeInTheDocument));
+  it('testing if 3 citites are rendered homepage', async () => {
+    renderWithProviders(
+      <BrowserRouter>
+        <HomePage />
+      </BrowserRouter>
+    );
+    await waitFor(() => {
+      const cities = screen.getAllByTestId('cities');
+      expect(cities.length).toBe(3);
+    });
+  });
+  it('testing if 3 citites are rendered homepage', async () => {
+    renderWithProviders(
+      <BrowserRouter>
+        <HomePage />
+      </BrowserRouter>
+    );
+    await waitFor(() => {
+      const alphabets = screen.getAllByTestId('alphabets');
+      expect(alphabets.length).toBe(2);
+    });
+  });
+  it('testing no of cities displayed in header', async () => {
+    renderWithProviders(
+      <BrowserRouter>
+        <HomePage />
+      </BrowserRouter>
+    );
+    await waitFor(() => {
+      expect(screen.getByTestId('total').textContent).toBe('Cities: 3');
+    });
+  });
 });
