@@ -13,7 +13,9 @@ export const fetchDetails = createAsyncThunk(
 const detailSlice = createSlice({
   name: 'detail',
   initialState,
-  reducers: {},
+  reducers: {
+    resetDetails: (state) => ({ ...state, detail: { stations: [] }, status: 'loading' }),
+  },
   extraReducers(builder) {
     builder.addCase(fetchDetails.fulfilled, (state, { payload }) => {
       const arr = payload.network.stations.slice(0, 16);
@@ -29,4 +31,5 @@ const detailSlice = createSlice({
   },
 });
 
+export const { resetDetails } = detailSlice.actions;
 export default detailSlice.reducer;
