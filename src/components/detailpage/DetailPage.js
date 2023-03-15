@@ -1,7 +1,10 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
-import { fetchDetails } from '../../redux/detailspage/detailSlice';
+import {
+  fetchDetails,
+  resetDetails,
+} from '../../redux/detailspage/detailSlice';
 import HeaderPanel from '../homepage/HeaderPanel';
 
 const DetailPage = () => {
@@ -14,6 +17,9 @@ const DetailPage = () => {
     if (status === 'loading') {
       dispatch(fetchDetails(nwId));
     }
+    return function cleanup() {
+      dispatch(resetDetails());
+    };
   }, [nwId, status, dispatch]);
 
   return (
